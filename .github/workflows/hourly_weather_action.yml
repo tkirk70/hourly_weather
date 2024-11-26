@@ -9,9 +9,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Hourly weather action
-        with: 
-          super_secret: ${{ secrets.API_KEY }}
+      - name: Run weather script
         env: 
           super_secret: ${{ secrets.API_KEY }}
+        run: |
+          echo "Running weather script with secret"
+          python app.py
+
 
