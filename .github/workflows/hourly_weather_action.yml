@@ -21,7 +21,7 @@ jobs:
 
       - name: Run weather script
         env: 
-          super_secret: ${{ secrets.API_KEY }}
+          API_KEY: ${{ secrets.API_KEY }}
         run: |
           echo "Running weather script with secret"
           python app.py
