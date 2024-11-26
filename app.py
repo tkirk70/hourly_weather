@@ -21,7 +21,10 @@ for city in cities:
     # print(response.json())
     j = response.json()
     # Convert to datetime object
-    dt_object = datetime.fromtimestamp(j['dt'])
+    try:
+        dt_object = datetime.fromtimestamp(j['dt'])
+    except:
+        dt_object = None
     
     # Convert to pandas datetime64[ns]
     date1 = pd.to_datetime(dt_object.date())
