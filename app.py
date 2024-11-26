@@ -3,7 +3,7 @@ import pandas as pd
 import sqlite3
 import time
 from datetime import datetime
-from config import API_KEY
+# from config import API_KEY
 
 cities = ['Columbus', 'Charlotte', 'Cleveland', 'Stanwood', 'Tucson', 'Tampa', 'Milwaukee']
 # cities = ['Columbus']
