@@ -7,6 +7,7 @@ from datetime import datetime
 
 # Access the API key from the environment variable
 api_key = os.getenv('API_KEY')
+print(api_key)
 
 
 cities = ['Columbus', 'Charlotte', 'Cleveland', 'Stanwood', 'Tucson', 'Tampa', 'Milwaukee']
@@ -16,7 +17,7 @@ cities = ['Columbus', 'Charlotte', 'Cleveland', 'Stanwood', 'Tucson', 'Tampa', '
 for city in cities:
     params = {'q': f'{city}', 'appid': api_key, 'units' : 'imperial'}
     response = requests.get("https://api.openweathermap.org/data/2.5/weather", params=params)
-    # print(response)
+    print(response)
     # print(response.json())
     j = response.json()
     # Convert to datetime object
