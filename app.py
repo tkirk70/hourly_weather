@@ -22,7 +22,7 @@ for city in cities:
     j = response.json()
     # Convert to datetime object
     try:
-        dt_object = datetime.fromtimestamp(j['dt'])
+        dt_object = datetime.fromtimestamp(j["dt"])
     except:
         dt_object = None
     
