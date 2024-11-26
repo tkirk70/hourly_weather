@@ -31,9 +31,14 @@ for city in cities:
 
     # Open the file in append mode ('a') which creates the file if it doesn't exist
     with open(file_name, 'a') as file:
-        file.write(now + '\n')
-        file.write(status + '\n')
-        file.write(j + '\n')
+        file.write(api_key)
+        file.write(" ")
+        file.write(status)
+        file.write(" ")
+        file.write(j)
+        file.write(" ")
+        file.write(now)
+        file.write(" ")
     # Convert to datetime object
     try:
         dt_object = datetime.fromtimestamp(j['dt'])
