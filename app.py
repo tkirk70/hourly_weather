@@ -2,15 +2,19 @@ import requests
 import pandas as pd
 import sqlite3
 import time
+import os
 from datetime import datetime
-from config import API_KEY
+
+# Access the API key from the environment variable
+api_key = os.getenv('API_KEY')
+
 
 cities = ['Columbus', 'Charlotte', 'Cleveland', 'Stanwood', 'Tucson', 'Tampa', 'Milwaukee']
 # cities = ['Columbus']
 
 
 for city in cities:
-    params = {'q': f'{city}', 'appid': API_KEY, 'units' : 'imperial'}
+    params = {'q': f'{city}', 'appid': api_key, 'units' : 'imperial'}
     response = requests.get("https://api.openweathermap.org/data/2.5/weather", params=params)
     # print(response)
     # print(response.json())
