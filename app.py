@@ -11,7 +11,7 @@ print(api_key)
 
 # Define the file name and the data to write
 file_name = 'log.txt'
-now = time.now()
+now = datetime.now()
 
 
 
