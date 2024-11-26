@@ -9,6 +9,12 @@ from datetime import datetime
 api_key = os.getenv('API_KEY')
 print(api_key)
 
+# Define the file name and the data to write
+file_name = 'log.txt'
+now = time.now()
+
+
+
 
 cities = ['Columbus', 'Charlotte', 'Cleveland', 'Stanwood', 'Tucson', 'Tampa', 'Milwaukee']
 # cities = ['Columbus']
@@ -20,6 +26,14 @@ for city in cities:
     print(response)
     # print(response.json())
     j = response.json()
+
+    status = response.status_code
+
+    # Open the file in append mode ('a') which creates the file if it doesn't exist
+    with open(file_name, 'a') as file:
+        file.write(now + '\n')
+        file.write(status + '\n')
+        file.write(j + '\n')
     # Convert to datetime object
     try:
         dt_object = datetime.fromtimestamp(j['dt'])
