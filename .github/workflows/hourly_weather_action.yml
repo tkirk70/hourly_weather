@@ -1,0 +1,17 @@
+name: Hourly weather action
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Hourly weather action
+        with: 
+          super_secret: ${{ secrets.API_KEY }}
+        env: 
+          super_secret: ${{ secrets.API_KEY }}
+
