@@ -27,3 +27,7 @@ jobs:
         OPENWEATHER_API_KEY: ${{ secrets.OPENWEATHER_API_KEY }}
       run: |
         python weather_data.py
+
+    - name: Print environment variables
+      run: env
+
