@@ -35,7 +35,7 @@ append_to_file("my_file.txt", "This is another line.\n")
 if __name__ == "__main__":
     api_key = os.getenv('OPENWEATHER_API_KEY')
     city = "Tokyo"
-    text = response.json()
     weather_data = fetch_weather(api_key, city)
     store_data('weather_data.db', weather_data)
+    text = response.json()
     append_to_file('log.txt', text)
