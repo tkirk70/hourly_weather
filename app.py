@@ -58,7 +58,7 @@ for city in cities:
     'wind_speed_mph' : j['wind']['speed'],
     'precipitation_mm_per_h': j.get('rain', {}).get('1h', 0),
     'snow_mm_per_h' : j.get('snow', {}).get('1h', 0),
-    'timestampunix' : j['dt'],
+    'timestampunix' : dt_object,
     'timestamp' : dt_object,
     'dateobj' : dt_object.strftime("%Y-%m-%d"),
     'timeobj': dt_object.strftime("%H:%M:%S"),
